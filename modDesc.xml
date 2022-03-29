@@ -15,7 +15,7 @@ Ausserdem wurde ein Fenster im Kennzeicheneditor hinzugefügt, welches all benut
 			]]></de>
     </description>
 
-	<iconFilename>Icon_ToolPositionSaver.dds</iconFilename>
+	<iconFilename>Icon_LicensePlateManager.dds</iconFilename>
     <multiplayer supported="true" />
 
 	<extraSourceFiles>
