@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<AssignedLicensePlatesLayout>
+    <GuiElement type="bitmap" profile="lpsBackground" id="licensePlateLayout">
+		<GuiElement type="empty" size="400px 680px">
+			<GuiElement type="boxLayout" profile="lpsHeaderBox" id="tableHeaderBox">
+				<GuiElement type="text" profile="lpsVehicleHeader" text="$l10n_ui_tps_vehicleHeader" />
+				<GuiElement type="text" profile="lpsLicensePlateHeader" text="$l10n_ui_tps_licensePlateHeader"/>
+			</GuiElement>
+
+			<GuiElement type="smoothList" profile="lpsList" id="licensePlateList" focusChangeTop="nil" focusChangeBottom="nil" selectedWithoutFocus="nil">
+				<GuiElement type="listItem" profile="lpsListItem">
+					<GuiElement type="text" name="vehicle" profile="lpsVehicle" />
+					<GuiElement type="text" name="licensePlate" profile="lpsLicensePlate" />
+				</GuiElement>
+			</GuiElement>
+
+		</GuiElement>	
+		<GuiElement type="threePartBitmap" profile="verticalListSliderRightDocked" size="12px 610px" position="-10px -50px">
+			<GuiElement type="slider" profile="verticalListSliderBar" size="6px 600px" dataElementId="licensePlateList" id="licensePlateListSlider" />
+		</GuiElement>
+    </GuiElement>
+</AssignedLicensePlatesLayout>

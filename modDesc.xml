@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<modDesc descVersion="63">
+    <version>1.0.1.0</version>
+	<author><![CDATA[Courseplay.devTeam]]></author>
+	<title>
+		<en>License Plate Manager</en>
+	</title>
+
+    <description>
+        <en><![CDATA[Only enables one vehicle with a given license plate at the same time.
+Also added a window in the license plate configurations menu, where all used license plates are listed.			
+			]]></en>
+		<de><![CDATA[Stellt sicher das jedes Fahrzeug unterschiedliche Kennzeichen hat.
+Ausserdem wurde ein Fenster im Kennzeicheneditor hinzugefügt, welches all benutzen Kennzeichen anzeigt.
+			]]></de>
+    </description>
+
+	<iconFilename>Icon_ToolPositionSaver.dds</iconFilename>
+    <multiplayer supported="true" />
+
+	<extraSourceFiles>
+		<sourceFile filename="LicensePlatesExtended.lua"/>
+	</extraSourceFiles>
+	<l10n>	
+		<text name="LPT_licensePlateAlreadyUsed"><de>Kennzeichen schon eingebaut in %s</de><en>License plate already in use %s</en></text>	
+		<text name="ui_tps_vehicleHeader"><de>Fahrzeuge</de><en>Vehicles</en></text>	
+		<text name="ui_tps_licensePlateHeader"><de>Kennzeichen</de><en>License plates</en></text>	
+	</l10n>
+	
+</modDesc>
