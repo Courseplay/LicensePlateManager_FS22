@@ -180,8 +180,8 @@ end
 
 local function onLoadMapFinished(menu, ...)
 	--- Only allow buying, if the license plate is not given to another vehicle.
-	local function onClickBuy(self, superFunc, ...)
-		LicensePlateStorage.debug("onClickBuy")
+	local function onClick(self, superFunc, ...)
+		LicensePlateStorage.debug("onClick")
 		if self.licensePlateData and g_licensePlateManager:getAreLicensePlatesAvailable() then 
 			local valid = LicensePlateStorage.validatePlates(self.licensePlateData, self.vehicle, self.storeItem)
 			if not valid then 
@@ -192,8 +192,11 @@ local function onLoadMapFinished(menu, ...)
 	end
 	menu.shopConfigScreen.buyButton.onClickCallback = Utils.overwrittenFunction(
 										menu.shopConfigScreen.buyButton.onClickCallback,
-										onClickBuy
-	)
+										onClick)
+	menu.shopConfigScreen.leaseButton.onClickCallback = Utils.overwrittenFunction(
+											menu.shopConfigScreen.leaseButton.onClickCallback,
+											onClick)
+
 	--- Adds the additional license plate menu.
 	g_gui.guis.LicensePlateDialog.onOpen = Utils.prependedFunction(g_gui.guis.LicensePlateDialog.onOpen, onOpen)
 	if LicensePlateStorage.debugActive then
