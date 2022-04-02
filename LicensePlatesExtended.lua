@@ -1,7 +1,7 @@
 LicensePlateStorage = {
 	data = {},
 	dataByVehicle = {},
-	debugActive = true,
+	debugActive = false,
 	MOD_NAME = g_currentModName,
 	BASE_DIRECTORY = g_currentModDirectory,
 	areDuplicatesAllowed = false
