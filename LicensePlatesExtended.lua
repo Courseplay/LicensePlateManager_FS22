@@ -73,16 +73,23 @@ LicensePlates.onDelete = Utils.prependedFunction(LicensePlates.onDelete, removeL
 
 --- Checks if the plate str is already given to another vehicle.
 function LicensePlateStorage.validatePlates(licensePlateData, curVehicle, storeItem)
+	LicensePlateStorage.debug("validatePlates")
 	local valid, vehicleFound = true, nil
-	local hasLicensePlate = curVehicle and curVehicle:getHasLicensePlates() or storeItem and storeItem.hasLicensePlates
-	if hasLicensePlate and licensePlateData.characters and not LicensePlateStorage.areDuplicatesAllowed then
+	local hasLicensePlate = curVehicle and curVehicle:getHasLicensePlates()
+	hasLicensePlate = hasLicensePlate or storeItem and storeItem.hasLicensePlates
+	if hasLicensePlate and licensePlateData.characters ~= nil and not LicensePlateStorage.areDuplicatesAllowed then
+		LicensePlateStorage.debug("checking for duplicates")
 		local chars = table.concat(licensePlateData.characters)
 		if chars then 
-			local vehicleTable = LicensePlateStorage.data[chars]
+			local chars2 = string.gsub(chars, "_", "0") -- for mp ...
+			LicensePlateStorage.debug("license plate string found: %s", chars)
+			local vehicleTable = LicensePlateStorage.data[chars] or LicensePlateStorage.data[chars2]
 			if vehicleTable  then 
+				LicensePlateStorage.debug("vehicle table found: %s", chars)
 				valid = false  
 				vehicleFound = next(vehicleTable)
-				if vehicleFound == curVehicle then 
+				if vehicleFound ~= nil and vehicleFound == curVehicle then 
+					LicensePlateStorage.debug("vehicle ignored as it's the same! (%s)", curVehicle:getName())
 					valid = true
 				end
 			end
@@ -98,7 +105,10 @@ end
 
 --- Only allow license plate change, if the new plate is not given to another vehicle.
 local function onChangeLicensePlate(self, superFunc, licensePlateData, ...)
-	if not licensePlateData or next(licensePlateData) == nil or not g_licensePlateManager:getAreLicensePlatesAvailable() then 
+	if not g_licensePlateManager:getAreLicensePlatesAvailable() then 
+		return superFunc(self, licensePlateData, ...)
+	end
+	if licensePlateData == nil or next(licensePlateData) == nil then 
 		return superFunc(self, licensePlateData, ...)
 	end
 	
@@ -181,8 +191,11 @@ end
 local function onLoadMapFinished(menu, ...)
 	--- Only allow buying, if the license plate is not given to another vehicle.
 	local function onClick(self, superFunc, ...)
+		if not g_licensePlateManager:getAreLicensePlatesAvailable()  then 
+			return superFunc(self, ...)
+		end
 		LicensePlateStorage.debug("onClick")
-		if self.licensePlateData and g_licensePlateManager:getAreLicensePlatesAvailable() then 
+		if self.licensePlateData then 
 			local valid = LicensePlateStorage.validatePlates(self.licensePlateData, self.vehicle, self.storeItem)
 			if not valid then 
 				return
