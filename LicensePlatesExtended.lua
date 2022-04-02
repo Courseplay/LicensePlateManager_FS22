@@ -55,7 +55,7 @@ LicensePlates.setLicensePlatesData = Utils.appendedFunction(LicensePlates.setLic
 local function removeLicensePlate(vehicle, ...)
 	if vehicle.propertyState ~= Vehicle.PROPERTY_STATE_SHOP_CONFIG then
 		local spec = vehicle.spec_licensePlates
-		if spec and spec.licensePlateData.characters then
+		if spec and spec.licensePlateData and spec.licensePlateData.characters then
 			local chars = table.concat(spec.licensePlateData.characters)
 			LicensePlateStorage.debug("trying to remove %s", tostring(chars))
 			if chars then 
