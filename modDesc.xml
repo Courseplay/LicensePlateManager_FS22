@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
-<modDesc descVersion="63">
-    <version>1.0.1.0</version>
+<modDesc descVersion="64">
+    <version>1.0.0.0</version>
 	<author><![CDATA[Courseplay.devTeam]]></author>
 	<title>
 		<en>License Plate Manager</en>
@@ -8,11 +8,11 @@
 
     <description>
         <en><![CDATA[Only enables one vehicle with a given license plate at the same time.
-Also added a window in the license plate configurations menu, where all used license plates are listed.			
-			]]></en>
+Also added a window in the license plate configurations menu, where all used license plates are listed.
+]]></en>
 		<de><![CDATA[Stellt sicher das jedes Fahrzeug unterschiedliche Kennzeichen hat.
 Ausserdem wurde ein Fenster im Kennzeicheneditor hinzugefügt, welches all benutzen Kennzeichen anzeigt.
-			]]></de>
+]]></de>
     </description>
 
 	<iconFilename>Icon_LicensePlateManager.dds</iconFilename>
