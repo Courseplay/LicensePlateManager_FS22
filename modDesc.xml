@@ -11,8 +11,8 @@
         <en><![CDATA[Only enables one vehicle with a given license plate at the same time.
 Also added a window in the license plate configurations menu, where all used license plates are listed.
 ]]></en>
-		<de><![CDATA[Stellt sicher das jedes Fahrzeug unterschiedliche Kennzeichen hat.
-Ausserdem wurde ein Fenster im Kennzeicheneditor hinzugefügt, welches alle benutzen Kennzeichen anzeigt.
+		<de><![CDATA[Ermöglicht nur noch ein Fahrzeug mit einem bestimmten Nummernschild zur gleichen Zeit.
+Außerdem wurde ein Fenster im Menü Nummernschildkonfigurator hinzugefügt, in dem alle verwendeten Nummernschilder aufgelistet sind.
 ]]></de>
     </description>
 
