@@ -4,8 +4,16 @@ LicensePlateStorage = {
 	debugActive = false,
 	MOD_NAME = g_currentModName,
 	BASE_DIRECTORY = g_currentModDirectory,
-	areDuplicatesAllowed = false
+	areDuplicatesAllowed = false,
+	baseXmlKey = "LicensePlateManager",
+	allowDuplicatesText = g_i18n:getText("LPT_allowDuplicates"),
+	disallowDuplicatesText = g_i18n:getText("LPT_disallowDuplicates"),
 }
+
+function LicensePlateStorage.getText()
+	return LicensePlateStorage.areDuplicatesAllowed and LicensePlateStorage.allowDuplicatesText or LicensePlateStorage.disallowDuplicatesText
+end
+
 function LicensePlateStorage.debug(str, ...)
 	if LicensePlateStorage.debugActive then
 		print(string.format("LTS: "..str, ...))
@@ -77,6 +85,11 @@ function LicensePlateStorage.validatePlates(licensePlateData, curVehicle, storeI
 	local valid, vehicleFound = true, nil
 	local hasLicensePlate = curVehicle and curVehicle:getHasLicensePlates()
 	hasLicensePlate = hasLicensePlate or storeItem and storeItem.hasLicensePlates
+
+	if hasLicensePlate and licensePlateData.placementIndex and licensePlateData.placementIndex == LicensePlateManager.PLACEMENT_OPTION.NONE then
+		return true
+	end
+
 	if hasLicensePlate and licensePlateData.characters ~= nil and not LicensePlateStorage.areDuplicatesAllowed then
 		LicensePlateStorage.debug("checking for duplicates")
 		local chars = table.concat(licensePlateData.characters)
@@ -155,7 +168,7 @@ local function onOpen(self)
 			local vehicle = self.sortedVehicles[index]
 			cell:getAttribute("vehicle"):setText(vehicle:getName())
 			cell:getAttribute("licensePlate"):setText(plate)
-			if #self.data[plate] > 1 then 
+			if #self.data[plate] > 1 and not LicensePlateStorage.areDuplicatesAllowed then 
 				cell:setDisabled(true)
 			else 
 				cell:setDisabled(false)
@@ -168,11 +181,25 @@ local function onOpen(self)
 		self.target.getNumberOfSections = function(self)
 			return 1
 		end
+
+		self.target.onClickAllowDuplicates = function(self, btn)
+			LicensePlateStorage.areDuplicatesAllowed = not LicensePlateStorage.areDuplicatesAllowed
+			LicensePlateStorage.debug("onClickAllowDuplicates")
+			btn:setText(LicensePlateStorage.getText())
+			self.licensePlateList:reloadData()
+
+			local xmlFile = XMLFile.create("temp",  LicensePlateStorage.xmlFileName, LicensePlateStorage.baseXmlKey, LicensePlateStorage.xmlSchema)
+			if xmlFile then
+				xmlFile:setValue(LicensePlateStorage.baseXmlKey .. "#areDuplicatesAllowed", LicensePlateStorage.areDuplicatesAllowed)
+				xmlFile:save()
+				xmlFile:delete()
+			end
+		end
 		
 		--- Adds the additional menu.
 		LicensePlateStorage.debug("self.tpsInitialized")
 		g_gui:loadProfiles( Utils.getFilename("gui/guiProfiles.xml", LicensePlateStorage.BASE_DIRECTORY) )
-		self.target:registerControls({"licensePlateLayout", "tableHeaderBox", "licensePlateList"})
+		self.target:registerControls({"licensePlateLayout", "tableHeaderBox", "licensePlateList", "allDuplicatesBtn"})
 
 		local xmlFile = loadXMLFile("Temp", Utils.getFilename("gui/AssignedLicensePlates.xml", LicensePlateStorage.BASE_DIRECTORY))
 		g_gui:loadGuiRec(xmlFile, "AssignedLicensePlatesLayout", self, self.target)
@@ -184,6 +211,12 @@ local function onOpen(self)
 	  	self.target.licensePlateList:setDelegate(self.target)
 		self.target.licensePlateLayout:onGuiSetupFinished()
 		self:updateAbsolutePosition()
+
+		self.target.allDuplicatesBtn:unlinkElement()
+		FocusManager:removeElement(self.target.allDuplicatesBtn)
+		self.target.okButton.parent:addElement(self.target.allDuplicatesBtn)
+		self.target.okButton.parent:invalidateLayout()
+		self.target.allDuplicatesBtn:setText(LicensePlateStorage.getText())
 	end
 	self.target.licensePlateList:reloadData()
 end
@@ -215,5 +248,21 @@ local function onLoadMapFinished(menu, ...)
 	if LicensePlateStorage.debugActive then
 		addConsoleCommand("lpsEnableLicensePlateDuplicates", "Enables/disables license plate duplicates for vehicles.", 'enableLicensePlateDuplicates', LicensePlateStorage)
 	end
+
+	--- Base cp folder
+	LicensePlateStorage.baseDir = g_modSettingsDirectory .. LicensePlateStorage.MOD_NAME .. "/"
+	createFolder(LicensePlateStorage.baseDir)
+	--- Base cp folder
+	LicensePlateStorage.xmlFileName = LicensePlateStorage.baseDir.."LicensePlateManger.xml"
+
+	LicensePlateStorage.xmlSchema = XMLSchema.new("LicensePlateStorage")
+	LicensePlateStorage.xmlSchema:register(XMLValueType.BOOL, LicensePlateStorage.baseXmlKey .. "#areDuplicatesAllowed", "Duplicates allowed.", false)
+
+	local xmlFile = XMLFile.loadIfExists("temp", LicensePlateStorage.xmlFileName, LicensePlateStorage.xmlSchema)
+	if xmlFile then 
+		LicensePlateStorage.areDuplicatesAllowed = xmlFile:getValue(LicensePlateStorage.baseXmlKey .. "#areDuplicatesAllowed", false)
+		xmlFile:delete()
+	end
+
 end
 ShopMenu.onLoadMapFinished = Utils.appendedFunction(ShopMenu.onLoadMapFinished, onLoadMapFinished)

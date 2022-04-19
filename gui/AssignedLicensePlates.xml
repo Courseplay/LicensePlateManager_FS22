@@ -19,4 +19,6 @@
 			<GuiElement type="slider" profile="verticalListSliderBar" size="6px 600px" dataElementId="licensePlateList" id="licensePlateListSlider" />
 		</GuiElement>
     </GuiElement>
+	<GuiElement type="button" profile="buttonExtra1" text="$l10n_LPT_allowDuplicates" onClick="onClickAllowDuplicates" id="allDuplicatesBtn" />
+
 </AssignedLicensePlatesLayout>
