@@ -66,7 +66,7 @@ local function removeLicensePlate(vehicle, ...)
 		if spec and spec.licensePlateData and spec.licensePlateData.characters then
 			local chars = table.concat(spec.licensePlateData.characters)
 			LicensePlateStorage.debug("trying to remove %s", tostring(chars))
-			if chars then 
+			if chars and LicensePlateStorage.data[chars] then 
 				LicensePlateStorage.data[chars][vehicle] = nil
 				if next(LicensePlateStorage.data[chars]) == nil then 
 					LicensePlateStorage.data[chars] = nil
