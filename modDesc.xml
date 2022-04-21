@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
-<modDesc descVersion="65">
+<modDesc descVersion="64">
     <version>1.0.0.1</version>
 	<author><![CDATA[Courseplay.devTeam]]></author>
 	<title>
@@ -11,14 +11,14 @@
         <en><![CDATA[Only enables one vehicle with a given license plate at the same time.
 Also added a window in the license plate configurations menu, where all used license plates are listed.
 
-Changelog:
+Changelog 1.0.0.1:
 - Fixed a bug where the vehicle got duplicated when changed the configuration.
 - No check for duplicate license plate when configured as not mounted.
 ]]></en>
 		<de><![CDATA[Ermöglicht nur noch ein Fahrzeug mit einem bestimmten Nummernschild zur gleichen Zeit.
 Außerdem wurde ein Fenster im Menü Nummernschildkonfigurator hinzugefügt, in dem alle verwendeten Nummernschilder aufgelistet sind.
 
-Changelog:
+Changelog 1.0.0.1:
 - Bugfix wenn ein Fahrzeug konfiguriert wird und dann ein Duplikat hinterlässt.
 - Keine Überprüfung auf doppelten Eintrag, wenn die Konfiguration auf nicht montieren steht.
 ]]></de>
