@@ -5,6 +5,7 @@
 	<title>
 		<en>License Plate Manager</en>
 		<de>Kennzeichen Manager</de>
+		<ru>Менеджер номерных знаков</ru>
 	</title>
 
     <description>
@@ -31,11 +32,11 @@ Changelog 1.0.0.1:
 		<sourceFile filename="LicensePlatesExtended.lua"/>
 	</extraSourceFiles>
 	<l10n>	
-		<text name="LPT_licensePlateAlreadyUsed"><de>Kennzeichen schon eingebaut in %s</de><en>License plate already in use %s</en></text>	
-		<text name="ui_tps_vehicleHeader"><de>Fahrzeuge</de><en>Vehicles</en></text>	
-		<text name="ui_tps_licensePlateHeader"><de>Kennzeichen</de><en>License plates</en></text>	
-		<text name="LPT_allowDuplicates"><de>Duplikate erlaubt</de><en>Duplicates allowed</en></text>
-		<text name="LPT_disallowDuplicates"><de>Duplikate verboten</de><en>Duplicates disallowed</en></text>
+		<text name="LPT_licensePlateAlreadyUsed"><de>Kennzeichen schon eingebaut in %s</de><en>License plate already in use %s</en><ru>Номерной знак уже используется на %s</ru></text>	
+		<text name="ui_tps_vehicleHeader"><de>Fahrzeuge</de><en>Vehicles</en><ru>Автомобиль</ru></text>	
+		<text name="ui_tps_licensePlateHeader"><de>Kennzeichen</de><en>License plates</en><ru>Номерной знак</ru></text>	
+		<text name="LPT_allowDuplicates"><de>Duplikate erlaubt</de><en>Duplicates allowed</en><ru>Дубликаты разрешены</ru></text>
+		<text name="LPT_disallowDuplicates"><de>Duplikate verboten</de><en>Duplicates disallowed</en><ru>Дубликаты не разрешены</ru></text>
 	</l10n>
 	
 </modDesc>
