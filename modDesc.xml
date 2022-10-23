@@ -5,6 +5,7 @@
 	<title>
 		<en>License Plate Manager</en>
 		<de>Kennzeichen Manager</de>
+		<pl>Menadżer talblic rejestracyjnych</pl>
 	</title>
 
     <description>
@@ -31,11 +32,11 @@ Changelog 1.0.0.1:
 		<sourceFile filename="LicensePlatesExtended.lua"/>
 	</extraSourceFiles>
 	<l10n>	
-		<text name="LPT_licensePlateAlreadyUsed"><de>Kennzeichen schon eingebaut in %s</de><en>License plate already in use %s</en></text>	
-		<text name="ui_tps_vehicleHeader"><de>Fahrzeuge</de><en>Vehicles</en></text>	
-		<text name="ui_tps_licensePlateHeader"><de>Kennzeichen</de><en>License plates</en></text>	
-		<text name="LPT_allowDuplicates"><de>Duplikate erlaubt</de><en>Duplicates allowed</en></text>
-		<text name="LPT_disallowDuplicates"><de>Duplikate verboten</de><en>Duplicates disallowed</en></text>
+		<text name="LPT_licensePlateAlreadyUsed"><de>Kennzeichen schon eingebaut in %s</de><en>License plate already in use %s</en><pl>Tablica rejestracyjna już użyta w %s</pl></text>	
+		<text name="ui_tps_vehicleHeader"><de>Fahrzeuge</de><en>Vehicles</en><pl>Pojazdy</pl></text>	
+		<text name="ui_tps_licensePlateHeader"><de>Kennzeichen</de><en>License plates</en><pl>Tablica rejestracyjna</pl></text>	
+		<text name="LPT_allowDuplicates"><de>Duplikate erlaubt</de><en>Duplicates allowed</en><pl>Duplikaty dozwolone</pl></text>
+		<text name="LPT_disallowDuplicates"><de>Duplikate verboten</de><en>Duplicates disallowed</en><pl>Duplikaty niedozwolone</pl></text>
 	</l10n>
 	
 </modDesc>
