@@ -1,24 +1,32 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <AssignedLicensePlatesLayout>
-    <GuiElement type="bitmap" profile="lpsBackground" id="licensePlateLayout">
-		<GuiElement type="empty" size="400px 680px">
-			<GuiElement type="boxLayout" profile="lpsHeaderBox" id="tableHeaderBox">
-				<GuiElement type="text" profile="lpsVehicleHeader" text="$l10n_ui_tps_vehicleHeader" />
-				<GuiElement type="text" profile="lpsLicensePlateHeader" text="$l10n_ui_tps_licensePlateHeader"/>
-			</GuiElement>
-
-			<GuiElement type="smoothList" profile="lpsList" id="licensePlateList" focusChangeTop="nil" focusChangeBottom="nil" selectedWithoutFocus="nil">
-				<GuiElement type="listItem" profile="lpsListItem">
-					<GuiElement type="text" name="vehicle" profile="lpsVehicle" />
-					<GuiElement type="text" name="licensePlate" profile="lpsLicensePlate" />
-				</GuiElement>
-			</GuiElement>
-
+	<GuiElement profile="lpsBackground" id="dialogElement">
+        <ThreePartBitmap profile="fs25_dialogBgMiddle" />
+        <ThreePartBitmap profile="fs25_dialogBgTop" />
+        <ThreePartBitmap profile="fs25_dialogBgBottom" />
+		<GuiElement profile="lpsList">
+			<Bitmap profile="fs25_subCategoryStartClipper" name="startClipper" />
+			<Bitmap profile="fs25_subCategoryStopClipper" name="endClipper" />
+			<SmoothList id="licensePlateList" focusChangeTop="nil" focusChangeBottom="nil" selectedWithoutFocus="nil"
+				startClipperElementName="startClipper" endClipperElementName="endClipper"  listSectionHeader="header">
+				
+				<ListItem profile="lpsListItemHeader" name="header">
+					<Text profile="lpsVehicleHeader" text="$l10n_ui_tps_vehicleHeader" />
+					<Text profile="lpsLicensePlateHeader" text="$l10n_ui_tps_licensePlateHeader"/>
+				</ListItem>
+				<ListItem profile="lpsListItem">
+					<Text profile="lpsVehicle" name="vehicle"/>
+					<Text profile="lpsImplement" name="implement"/>
+					<Text profile="lpsLicensePlate" name="licensePlate"/>
+				</ListItem>
+			</SmoothList>
+			<ThreePartBitmap profile="fs25_subCategoryListSliderBox">
+				<Slider profile="fs25_listSlider" dataElementId="licensePlateList" />
+			</ThreePartBitmap>
 		</GuiElement>	
-		<GuiElement type="threePartBitmap" profile="verticalListSliderRightDocked" size="12px 610px" position="-10px -50px">
-			<GuiElement type="slider" profile="verticalListSliderBar" size="6px 600px" dataElementId="licensePlateList" id="licensePlateListSlider" />
-		</GuiElement>
+		<!-- <ThreePartBitmap profile="verticalListSliderRightDocked" size="12px 610px" position="-10px -50px">
+			<Slider profile="verticalListSliderBar" size="6px 600px" dataElementId="licensePlateList" id="licensePlateListSlider" />
+		</ThreePartBitmap> -->
     </GuiElement>
-	<GuiElement type="button" profile="buttonExtra1" text="$l10n_LPT_allowDuplicates" onClick="onClickAllowDuplicates" id="allDuplicatesBtn" />
-
+	<!-- <Button profile="buttonExtra1" text="$l10n_LPT_allowDuplicates" onClick="onClickAllowDuplicates" id="allDuplicatesBtn" /> -->
 </AssignedLicensePlatesLayout>

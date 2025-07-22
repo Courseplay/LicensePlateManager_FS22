@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
-<modDesc descVersion="64">
-    <version>1.0.0.1</version>
+<modDesc descVersion="99">
+    <version>1.0.0.0</version>
 	<author><![CDATA[Courseplay.devTeam]]></author>
 	<title>
 		<en>License Plate Manager</en>
