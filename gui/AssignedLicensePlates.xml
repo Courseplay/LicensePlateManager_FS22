@@ -7,8 +7,10 @@
 		<GuiElement profile="lpsList">
 			<Bitmap profile="fs25_subCategoryStartClipper" name="startClipper" />
 			<Bitmap profile="fs25_subCategoryStopClipper" name="endClipper" />
-			<SmoothList id="licensePlateList" focusChangeTop="nil" focusChangeBottom="nil" selectedWithoutFocus="nil"
-				startClipperElementName="startClipper" endClipperElementName="endClipper"  listSectionHeader="header">
+			<SmoothList id="licensePlateList" startClipperElementName="startClipper" 
+				endClipperElementName="endClipper" 
+				focusChangeBottom="nil" focusChangeTop="nil"
+				listSectionHeader="header" onClick="onClickItem">
 				
 				<ListItem profile="lpsListItemHeader" name="header">
 					<Text profile="lpsVehicleHeader" text="$l10n_ui_tps_vehicleHeader" />

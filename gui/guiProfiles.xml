@@ -4,15 +4,6 @@
         <size value="428px 670px"/>
         <position value="-580px -60px"/>
     </Profile>
-
-	<Profile name="lpsHeaderBox" extends="emptyPanel" with="anchorTopLeft">
-		<size value="380px 50px"/>
-		<position value="0px 0px"/>
-        <alignmentX value="left"/>
-        <alignmentY value="bottom"/>
-		<autoValidateLayout value="true"/>
-		<flowDirection value="horizontal"/>
-    </Profile>
 	
 	<Profile name="lpsHeader" extends="fs25_textDefault" with="anchorMiddleLeft">
         <textSize value="24px" />
@@ -35,17 +26,15 @@
 		<position value="15px -20px"/>
         <size value="380px 550px"/>
 		<isHorizontalList value="false" />
-        <selectedWithoutFocus value="false" />
+        <showHighlights value="true" />
     </Profile>
 
 	<Profile name="lpsListItem" extends="fs25_settingsControlsListItem" with="alternating">
 		<position value="0px 0px"/>
         <size value="360px 50px" />
-
-        <imageColor value="$preset_colorListRowBackground"/>
+        <!-- <imageColor value="$preset_colorListRowBackground"/>
         <imageFocusedColor value="$preset_colorFocusBackgroundGradient"/>
-        <imageSelectedColor value="$preset_colorFocusBackgroundGradient"/>
-		<handleFocus value="false"/>
+        <imageSelectedColor value="$preset_colorFocusBackgroundGradient"/> -->
     </Profile>
 
     <Profile name="lpsListItemHeader" extends="fs25_settingsControlsListItem" with="alternating">
@@ -55,7 +44,6 @@
         <imageColor value="$preset_colorListRowBackground"/>
         <imageFocusedColor value="$preset_colorFocusBackgroundGradient"/>
         <imageSelectedColor value="$preset_colorFocusBackgroundGradient"/>
-		<handleFocus value="false"/>
     </Profile>
 
 	<Profile name="lpsVehicle" extends="fs25_textDefault" with="anchorTopLeft">
