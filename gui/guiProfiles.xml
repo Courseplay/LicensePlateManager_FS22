@@ -1,90 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GUIProfiles>
 	<Profile name="lpsBackground" extends="fs25_licensePlateDialogContainer">
-        <Value name="size" value="428px 670px"/>
+        <size value="428px 670px"/>
         <position value="-580px -60px"/>
     </Profile>
 
 	<Profile name="lpsHeaderBox" extends="emptyPanel" with="anchorTopLeft">
-		<Value name="size" value="380px 50px"/>
-		<Value name="position" value="0px 0px"/>
-        <Value name="alignmentX" value="left"/>
-        <Value name="alignmentY" value="bottom"/>
-		<Value name="autoValidateLayout" value="true"/>
-		<Value name="flowDirection" value="horizontal"/>
+		<size value="380px 50px"/>
+		<position value="0px 0px"/>
+        <alignmentX value="left"/>
+        <alignmentY value="bottom"/>
+		<autoValidateLayout value="true"/>
+		<flowDirection value="horizontal"/>
     </Profile>
 	
 	<Profile name="lpsHeader" extends="fs25_textDefault" with="anchorMiddleLeft">
-        <Value name="textSize" value="24px" />
-        <Value name="textBold" value="true" />
-        <Value name="position" value="0 0" />
-		<Value name="size" value="180px 40px"/>
-        <!-- <Value name="textColor" value="$preset_colorHeaderText"/>
-        <Value name="textFocusedColor" value="$preset_colorWhite"/>
-        <Value name="textHighlightedColor" value="$preset_colorWhite"/>
-        <Value name="textUpperCase" value="true"/>
-        <Value name="textVerticalAlignment" value="middle"/> -->
+        <textSize value="24px" />
+        <textBold value="true" />
+        <position value="0 0" />
+		<size value="180px 40px"/>
     </Profile>
 
 	<Profile name="lpsVehicleHeader" extends="lpsHeader">
-		<Value name="textAlignment" value="left"/>
-        <Value name="textOffset" value="25px 0px"/>
+		<textAlignment value="left"/>
+        <textOffset value="25px 0px"/>
     </Profile>
 
 	<Profile name="lpsLicensePlateHeader" extends="lpsHeader"  with="anchorMiddleRight">
-		<Value name="textAlignment" value="right"/>
-        <Value name="textOffset" value="-15px 0px"/>
+		<textAlignment value="right"/>
+        <textOffset value="-15px 0px"/>
     </Profile>
 
 	<Profile name="lpsList" extends="list" with="anchorTopLeft">
-		<Value name="position" value="15px -20px"/>
-        <Value name="size" value="380px 550px"/>
-		<Value name="isHorizontalList" value="false" />
-        <Value name="selectedWithoutFocus" value="false" />
+		<position value="15px -20px"/>
+        <size value="380px 550px"/>
+		<isHorizontalList value="false" />
+        <selectedWithoutFocus value="false" />
     </Profile>
 
 	<Profile name="lpsListItem" extends="fs25_settingsControlsListItem" with="alternating">
-		<Value name="position" value="0px 0px"/>
-        <Value name="size" value="360px 50px" />
+		<position value="0px 0px"/>
+        <size value="360px 50px" />
 
-        <Value name="imageColor" value="$preset_colorListRowBackground"/>
-        <Value name="imageFocusedColor" value="$preset_colorFocusBackgroundGradient"/>
-        <Value name="imageSelectedColor" value="$preset_colorFocusBackgroundGradient"/>
-		<Value name="handleFocus" value="false"/>
+        <imageColor value="$preset_colorListRowBackground"/>
+        <imageFocusedColor value="$preset_colorFocusBackgroundGradient"/>
+        <imageSelectedColor value="$preset_colorFocusBackgroundGradient"/>
+		<handleFocus value="false"/>
     </Profile>
 
     <Profile name="lpsListItemHeader" extends="fs25_settingsControlsListItem" with="alternating">
-		<Value name="position" value="0px 0px"/>
-        <Value name="size" value="360px 50px" />
+		<position value="0px 0px"/>
+        <size value="360px 50px" />
 
-        <Value name="imageColor" value="$preset_colorListRowBackground"/>
-        <Value name="imageFocusedColor" value="$preset_colorFocusBackgroundGradient"/>
-        <Value name="imageSelectedColor" value="$preset_colorFocusBackgroundGradient"/>
-		<Value name="handleFocus" value="false"/>
+        <imageColor value="$preset_colorListRowBackground"/>
+        <imageFocusedColor value="$preset_colorFocusBackgroundGradient"/>
+        <imageSelectedColor value="$preset_colorFocusBackgroundGradient"/>
+		<handleFocus value="false"/>
     </Profile>
 
 	<Profile name="lpsVehicle" extends="fs25_textDefault" with="anchorTopLeft">
-		<Value name="position" value="0px 0px"/>
-		<Value name="size" value="190px 25px" />
-        <Value name="textVerticalAlignment" value="middle" />
-        <Value name="textAutoWidth" value="true" />
-		<Value name="textDisabledColor" value="$preset_colorRed"/>
+		<position value="0px 0px"/>
+		<size value="190px 25px" />
+        <textVerticalAlignment value="middle" />
+        <textAutoWidth value="true" />
+		<textDisabledColor value="$preset_colorRed"/>
     </Profile>
     <Profile name="lpsImplement" extends="fs25_textDefault" with="anchorBottomLeft">
-		<Value name="position" value="15px 0px"/>
-		<Value name="size" value="190px 25px" />
-        <Value name="textVerticalAlignment" value="middle" />
-        <Value name="textAutoWidth" value="true" />
-		<Value name="textDisabledColor" value="$preset_colorRed"/>
+		<position value="15px 0px"/>
+		<size value="190px 25px" />
+        <textVerticalAlignment value="middle" />
+        <textAutoWidth value="true" />
+		<textDisabledColor value="$preset_colorRed"/>
     </Profile>
 	<Profile name="lpsLicensePlate" extends="fs25_textDefault" with="anchorTopRight">
-		<Value name="size" value="190px 25px" />
-        <Value name="textVerticalAlignment" value="middle" />
-        <Value name="textAutoWidth" value="true" />
-        <Value name="position" value="-10px 0" />
-		<Value name="textAlignment" value="right" />
-		<Value name="textDisabledColor" value="$preset_colorRed"/>
+		<size value="190px 25px" />
+        <textVerticalAlignment value="middle" />
+        <textAutoWidth value="true" />
+        <position value="-10px 0" />
+		<textAlignment value="right" />
+		<textDisabledColor value="$preset_colorRed"/>
     </Profile>
-
-
 </GUIProfiles>

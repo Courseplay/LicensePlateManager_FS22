@@ -275,9 +275,6 @@ local function onLoadMapFinished(configScreen, ...)
 
 	--- Adds the additional license plate menu.
 	g_gui.guis.LicensePlateDialog.onOpen = Utils.prependedFunction(g_gui.guis.LicensePlateDialog.onOpen, onOpen)
-	if LicensePlateStorage.debugActive then
-		addConsoleCommand("lpsEnableLicensePlateDuplicates", "Enables/disables license plate duplicates for vehicles.", 'enableLicensePlateDuplicates', LicensePlateStorage)
-	end
 
 	--- Base cp folder
 	LicensePlateStorage.baseDir = g_modSettingsDirectory .. LicensePlateStorage.MOD_NAME .. "/"
