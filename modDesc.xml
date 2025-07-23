@@ -10,19 +10,17 @@
 	</title>
 
     <description>
-        <en><![CDATA[Only enables one vehicle with a given license plate at the same time.
-Also added a window in the license plate configurations menu, where all used license plates are listed.
+        <en><![CDATA[Shows a list of all owned vehicles and tools in the the license plate selection menu.
+Compared to FS22, the FS25 got a few changes:
+- You can now set a follow up license plate. Just click on a nexisting license plate to give your tool the same license plate.
+- You can buy a vehicle with the same license plate, but it will be marked in the list.
 
-Changelog 1.0.0.1:
-- Fixed a bug where the vehicle got duplicated when changed the configuration.
-- No check for duplicate license plate when configured as not mounted.
 ]]></en>
-		<de><![CDATA[Ermöglicht nur noch ein Fahrzeug mit einem bestimmten Nummernschild zur gleichen Zeit.
-Außerdem wurde ein Fenster im Menü Nummernschildkonfigurator hinzugefügt, in dem alle verwendeten Nummernschilder aufgelistet sind.
+		<de><![CDATA[Zeigt eine Liste aller erworbenen Fahrzeuge und Geräte im Menü der Kennzeichen Auswahl.
+Verglichen mit der LS22 Version, gibt es für den LS25 ein paar Änderungen:
+- Es kann ein Folgekennzeichen vergeben werden. Klicke dazu einfach auf ein vorhandenes Kennzeichen um deinem Gerät das gleiche Kennzeichen zu geben.
+- Es ist möglich, trotz doppelter Kennzeichen das Fahrzeug oder Gerät zu kaufen, aber es wird in der Liste markiert.
 
-Changelog 1.0.0.1:
-- Bugfix wenn ein Fahrzeug konfiguriert wird und dann ein Duplikat hinterlässt.
-- Keine Überprüfung auf doppelten Eintrag, wenn die Konfiguration auf nicht montieren steht.
 ]]></de>
     </description>
 
