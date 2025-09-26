@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
-<modDesc descVersion="99">
+<modDesc descVersion="101">
     <version>1.0.0.0</version>
 	<author><![CDATA[Courseplay.devTeam]]></author>
 	<title>
 		<en>License Plate Manager</en>
 		<de>Kennzeichen Manager</de>
-		<ru>Менеджер номерных знаков</ru>
-		<pl>Menadżer talblic rejestracyjnych</pl>
 	</title>
 
     <description>
@@ -24,18 +22,18 @@ Verglichen mit der LS22 Version, gibt es für den LS25 ein paar Änderungen:
 ]]></de>
     </description>
 
-	<iconFilename>Icon_LicensePlateManager.dds</iconFilename>
+	<iconFilename>Icon_licensePlateManager.dds</iconFilename>
     <multiplayer supported="true" />
 
 	<extraSourceFiles>
 		<sourceFile filename="LicensePlatesExtended.lua"/>
 	</extraSourceFiles>
 	<l10n>	
-		<text name="LPT_licensePlateAlreadyUsed"><de>Kennzeichen schon eingebaut in %s</de><en>License plate already in use %s</en><ru>Номерной знак уже используется на %s</ru><pl>Tablica rejestracyjna już użyta w %s</pl></text>	
-		<text name="ui_tps_vehicleHeader"><de>Fahrzeuge</de><en>Vehicles</en><ru>Автомобиль</ru><pl>Pojazdy</pl></text>	
-		<text name="ui_tps_licensePlateHeader"><de>Kennzeichen</de><en>License plates</en><ru>Номерной знак</ru><pl>Tablica rejestracyjna</pl></text>	
-		<text name="LPT_allowDuplicates"><de>Duplikate erlaubt</de><en>Duplicates allowed</en><ru>Дубликаты разрешены</ru><pl>Duplikaty dozwolone</pl></text>
-		<text name="LPT_disallowDuplicates"><de>Duplikate verboten</de><en>Duplicates disallowed</en><ru>Дубликаты не разрешены</ru><pl>Duplikaty niedozwolone</pl></text>
+		<text name="LPT_licensePlateAlreadyUsed"><de>Kennzeichen schon eingebaut in %s</de><en>License plate already in use %s</en></text>	
+		<text name="ui_tps_vehicleHeader"><de>Fahrzeuge</de><en>Vehicles</en></text>	
+		<text name="ui_tps_licensePlateHeader"><de>Kennzeichen</de><en>License plates</en></text>	
+		<text name="LPT_allowDuplicates"><de>Duplikate erlaubt</de><en>Duplicates allowed</en></text>
+		<text name="LPT_disallowDuplicates"><de>Duplikate verboten</de><en>Duplicates disallowed</en></text>
 	</l10n>
 	
 </modDesc>
